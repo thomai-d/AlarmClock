@@ -1,7 +1,7 @@
 # AlarmClock
 Arduino based alarm clock with wake up light
 
-![WakeUpLight](https://github.com/thomai-d/AlarmClock/blob/master/img/PreAlarm.png)
+![WakeUpLight](https://github.com/thomai-d/AlarmClock/blob/master/img/PreAlarm.jpg)
 
 ## Features
 * Two individually configurable alarm times
