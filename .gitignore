@@ -1,0 +1,9 @@
+Debug
+__vm
+bin
+obj
+*.filters
+packages
+*.suo
+*.b#?
+*.s#?
