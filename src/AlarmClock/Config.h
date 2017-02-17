@@ -5,10 +5,10 @@
 
 /* WORKAROUNDS */
 
-#define ALTERNATIVE_BUTTONS	// for #1
-#define ALTERNATIVE_ROTARY	// #1, #4
+//#define ALTERNATIVE_BUTTONS	// for #1
+#define ALTERNATIVE_ROTARY	// #1, #4, #5
 //#define ALTERNATIVE_LDR		// #3
-#define NO_LDR				// #1
+//#define NO_LDR				// #1
 
 /* FONTS */
 
