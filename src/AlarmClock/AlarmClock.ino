@@ -5,7 +5,7 @@
 #include <DS3232RTC.h>
 #include <Adafruit_BMP085.h>
 #include <avr/wdt.h>
-#include <hsv2rgb.h>
+#include <color.h>
 
 #include "Page.h"
 #include "MainPage.h"

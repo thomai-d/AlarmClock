@@ -2,7 +2,7 @@
 #define OUTPUT_HARDWARE_H
 
 #include <Arduino.h>
-#include <hsv2rgb.h>
+#include <Color.h>
 #include <EEPROM.h>
 
 #include "PinDefinitions.h"
