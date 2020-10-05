@@ -16,6 +16,12 @@ Alarm AlarmManagerClass::GetAlarm(uint8_t idx)
 	return temp;
 }
 
+void AlarmManagerClass::ToggleLEDOverride()
+{
+	this->lightOverride = !this->lightOverride;
+	Serial.println(this->lightOverride);
+}
+
 void AlarmManagerClass::ToggleOn(uint8_t idx)
 {
 	this->alarm[idx].ToggleOn();
@@ -56,10 +62,16 @@ void AlarmManagerClass::Service()
 		this->alarm[0].UnMute();
 		this->alarm[1].UnMute();
 		this->lastAlarmLevel = 0;
-		OutputHardware.SetLED(0);
+		OutputHardware.SetLED(this->lightOverride ? LED_ON_INTENSITY : 0);
 		OutputHardware.SetAlarm(false);
 		this->disableRequest = false;
 		this->enabled = false;
+	}
+
+	if (this->lightOverride != this->lastLightOverride)
+	{
+		OutputHardware.SetLED(this->lightOverride ? LED_ON_INTENSITY : 0);
+		this->lastLightOverride = this->lightOverride;
 	}
 
 	if (!this->enabled)
@@ -87,7 +99,7 @@ void AlarmManagerClass::Service()
 	// Set led light level.
 	uint8_t ledLevel = powf((float)maxLevel / 255.0f, 3) * 255.0f;
 	if (maxLevel > 0 && ledLevel == 0) ledLevel = 1;
-	OutputHardware.SetLED(ledLevel);
+	OutputHardware.SetLED(this->lightOverride ? LED_ON_INTENSITY : ledLevel);
 }
 
 void AlarmManagerClass::PersistAlarms()

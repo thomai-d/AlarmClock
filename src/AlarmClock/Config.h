@@ -50,6 +50,7 @@
 #define LIGHT_SAMPLES				8					// Number of samples for averaging available light.
 #define BACKLIGHT_MIN_LEVEL			3 					// Minimum backlight brighness.
 #define BACKLIGHT_MAX_LEVEL			100 				// Maximum backlight brighness.
+#define LED_ON_INTENSITY			255					// Intensity of LED light when manually activated.
 
 // EEPROM Adresses
 #define EEPROM_ALARM0_H		0

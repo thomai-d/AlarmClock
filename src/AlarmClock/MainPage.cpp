@@ -46,7 +46,16 @@ void MainPage::OnButton1Down()
 	case Mode::EditAlarm2:
 		AlarmManager.ToggleOn(1);
 		break;
+
+	case Mode::Normal:
+		AlarmManager.ToggleLEDOverride();
+		break;
 	}
+}
+
+bool MainPage::ForceReceiveButton1()
+{
+	return this->currentMode == Mode::Normal;
 }
 
 void MainPage::OnButton0Down()

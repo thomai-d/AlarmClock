@@ -12,6 +12,12 @@ public:
 	virtual void OnButton0Up(uint16_t downTimeMs) { };
 	virtual void OnButton1Up(uint16_t downTimeMs) { };
 	virtual void OnRotaryChanged(int8_t offset) { };
+
+	/// Can button 1 be received even in blocked mode?
+	virtual bool ForceReceiveButton1()
+	{
+		return false;
+	}
 };
 
 #endif

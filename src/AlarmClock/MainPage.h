@@ -37,6 +37,8 @@ public:
 	void OnButton1Up(uint16_t downTimeMs) override;
 	void OnRotaryChanged(int8_t offset) override;
 
+	bool ForceReceiveButton1() override;
+
 private:
 
 	void RefreshClock(bool force);

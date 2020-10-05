@@ -50,11 +50,18 @@ public:
 	// Resets EEPROM.
 	void FactoryReset();
 
+	// Toggles the manual override of the led light which is used to indicate alarm.
+	void ToggleLEDOverride();
+
 private:
 
 	Alarm alarm[MAX_ALARMS];
 
 	bool enabled = true;
+
+	// Forces the light to be active.
+	bool lightOverride = false;
+	bool lastLightOverride = false;
 
 	// Set this flag from an interrupt routine
 	// to disable the manager in the next Service() call.

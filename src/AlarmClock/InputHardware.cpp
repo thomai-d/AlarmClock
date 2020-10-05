@@ -115,7 +115,7 @@ void InputHardwareClass::OnPCINT1()
 			uint32_t delta = timeMs - b1_lastEvent;
 			if (delta > BUTTON_DEBOUNCE_MS)
 			{
-				if (Focus && !blockInput)
+				if (Focus && (!blockInput || Focus->ForceReceiveButton1()))
 				{
 					if (b1isUp)
 					{
